@@ -3,19 +3,15 @@ const express= require('express');
 // to attach any routes
 const router = express.Router();
 
+// user controllers
+const {retrieveAnswer, submitAnswer } = require('../Controller/answerController')
+
 
 // Retrieves answers for a specific question.
-router.get("/:question_id",(req,res)=>{
-    
-    // params is contains after / comes
-    const quID= req.params.question_id;
-    res.send(`specific answer: ${quID}`);
-})
+router.get("/:question_id", retrieveAnswer)
 
 
 // Submits an answer for a specific question.
-router.post("/",(req,res)=>{
-    res.send("submit answer")
-})
+router.post("/", submitAnswer)
 
 module.exports = router

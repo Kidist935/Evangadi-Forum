@@ -3,19 +3,17 @@ const express = require("express");
 // to attach any routes
 const router = express.Router();
 
-// For user
+// user controllers
+const {register, login, checkUser} = require('../Controller/userController')
+
+
+
 // Register Route
-router.post("/register", (req, res) => {
-  res.send("register user");
-});
+router.post("/register", register);
 
 // login user
-router.post("/login", (req, res) => {
-  res.send("login user");
-});
+router.post("/login", login);
 // check user
-router.get("/checkUser", (req, res) => {
-  res.send("check user");
-});
+router.get("/checkUser", checkUser);
 
 module.exports = router;
