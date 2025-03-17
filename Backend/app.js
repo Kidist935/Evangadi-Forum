@@ -5,8 +5,8 @@ const app = express();
 const port = 4400;
 
 // import db connection
-
 const dbconnection = require("./db/dbconfig")
+
 // authentication middleware file
 const authMiddleware =require("./Middleware/authMiddleware")
 
