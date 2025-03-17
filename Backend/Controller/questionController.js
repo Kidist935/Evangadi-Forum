@@ -7,6 +7,7 @@ function gQuestion(req, res){
 
 
 function sQuestion(req, res){
+    
     const qId = req.params.question_id;
     // call mysql using qId and send the result with res.send
     res.send(`single question : ${qId}`);
